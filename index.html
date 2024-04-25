@@ -25,6 +25,41 @@
       <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
     </div>
     <!-- Todo: Create a modal with a form to add tasks -->
+    <div class="container"><!--se crea la clase para centrar y darle un margen-->
+      <div class="text-center mb-5"><!-- se define el margen inferior de 5 y se centra, esto para el boton de add task-->
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal"> Add task</button><!--Se agrega el boton para activar el modal cuando se agrega una nueva tarea. con el btn success lo hacemos de color verde-->
+      </div>
+      <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true"><!--es un modal oculto que solo aparece cuando se active el Add task. por eso el fade class-->
+        <div class="modal-dialog"><!-- Definimos la estructura del dialogo-->
+          <div class="modal-content"><!--Definimos el contenido del dialogo-->
+            <div class="modal-header"><!--Definimos el header del dialogo-->
+              <h5 class="modal-tittle" id="formModalLabel">Add New Task</h5><!--Se define el titulo del modal-->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button><!--se añade un boton de cierre para el modal en caso de no querer agregar un task-->
+            </div>
+            <div class="modal-body"><!--Definir el cuerpo del modal-->
+              <form id="taskForm"><!--Crea un formulario con el Id definido para agregar un nuevo task-->
+                <div class="mb-3"><!--Los elementos del formulario tendran un margen inferior de 3-->
+                  <label for="title" class="form-label">Title</label><!--Entrada del titulo-->
+                  <input type="text" class="form-control" id="title" required><!--Se obliga al usuario a colocar una entrada del titulo-->
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description</label>
+                  <textarea class="form-control" id="description" rows="3" required></textarea><!--Mismo caso que el anterior, solo que con la descripcion-->
+                </div>
+                <div class="mb-3">
+                  <label for="deadline" class="form-label">Deadline</label>
+                  <input type="date" class="form-control" id="deadline" required><!--Mismo caso que el anterior solo que con la fecha limite-->
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><!--Boton para cerrar sin guardar la tarea-->
+              <button type="button" class="btn btn-primary" id="saveTask">Save Task</button><!--Boton para cerrar pero guardando la tarea-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row swim-lanes text-center justify-content-between">
       <div class="col-12 col-lg-4 d-flex">
         <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
