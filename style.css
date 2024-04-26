@@ -3,9 +3,22 @@ body {
   font-size: 16px;
 }
 
-#task-board .task-card[data-status="done"] {
+.task-card-green {
+  background-color: green !important;
+}
+
+.task-card-yellow {
+  background-color: yellow !important;
+}
+
+.task-card-red {
+  background-color: red !important;
+}
+
+.task-card-white {
   background-color: white !important;
 }
+
 
 
 .swim-lanes {

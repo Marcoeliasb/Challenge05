@@ -22,8 +22,10 @@ function createTaskCard(task) {
     } else if (daysUntildeadline === 1){
         card.css("background-color", "yellow");
 
+    } else if (daysUntildeadline > 2){
+        card.css("background-color","white");
     } else {
-        card.css("background-color","green");
+        card.css("background-color","white");
     }
 
     const deleteButton = $("<button>").addClass("btn btn-danger btn-sm delete-btn").html('<i class="fas fa-trash"></i>');//se crea el boton
@@ -90,8 +92,11 @@ function handleDrop(event, ui) {
     task.status = status; //Actualiza el estado de la tarea
 
     if(status === "done"){
-        console.log("Selected Card:",$("#"+taskID));
-        $("#"+taskID).css("background-color","white");
+        console.log("changing color");
+        $("#"+taskID).removeClass("task-card-yellow");
+        $("#"+taskID).removeClass("task-card-red");
+        $("#"+taskID).css("background-color", "white");
+        
         console.log("Selected card:",$("#"+taskID));
     }
 
