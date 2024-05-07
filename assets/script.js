@@ -17,12 +17,12 @@ function createTaskCard(task) {
     const today = dayjs();
     const deadline = dayjs(task.deadline);
     const daysUntildeadline = deadline.diff(today, "days");
-    if (daysUntildeadline <= 0){
+    if (daysUntildeadline <= 0 && task.status !== "done"){
         card.css("background-color", "red");
-    } else if (daysUntildeadline === 1){
+    } else if (daysUntildeadline === 1 && task.status !== "done"){
         card.css("background-color", "yellow");
 
-    } else if (daysUntildeadline > 2){
+    } else if (daysUntildeadline > 2 || task.status === "done"){
         card.css("background-color","white");
     } else {
         card.css("background-color","white");
